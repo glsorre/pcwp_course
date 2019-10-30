@@ -61,7 +61,7 @@ class TestMemoization(unittest.TestCase):
     def factorial_with_cache(n):
       factorial(n)
 
-    @lru_cache
+    @lru_cache(maxsize=128)
     def factorial_with_rlu(n):
       factorial(n)
 
