@@ -66,6 +66,7 @@ class TestMemoization(unittest.TestCase):
     result_without = timeit(code_without, number=10000)
     result_with = timeit(code, number=10000)
 
+    print(f"Tempo senza cache {result_without}. Tempo con cache {result_with}")
     self.assertGreater(result_without, result_with)
 
 if __name__ == '__main__':
