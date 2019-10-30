@@ -1,9 +1,9 @@
 def arithtmetic(a, b):
     return {
         "sum": a + b,
-        "multiplication": a * b,
+        "product": a * b,
         "division": a / b,
-        "modulus": a % b
+        "remainder": a % b
     }
 
 def factorial(n):
