@@ -1,8 +1,8 @@
 import unittest
 from math import factorial
 from timeit import timeit
-from lesson2.solutions import arithtmetic, memoize
-from lesson2.solutions import factorial as factorial_mine
+from lesson2.exercise import arithtmetic, memoize
+from lesson2.exercise import factorial as factorial_mine
 
 class TestArithmetic(unittest.TestCase):
   def test_1_1(self):
