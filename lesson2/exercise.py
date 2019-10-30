@@ -1,5 +1,3 @@
-__all__ = ['arithtmetic']
-
 def arithtmetic(a, b):
   """
   return an object:
