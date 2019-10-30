@@ -56,7 +56,10 @@ class TestFactorial(unittest.TestCase):
 
 class TestMemoization(unittest.TestCase):
   def test_memoization(self):
-    factorial_with_cache = memoize(factorial)
+
+    @memoize
+    def factorial_with_cache(n):
+      factorial(n)
 
     @lru_cache
     def factorial_with_rlu(n):
