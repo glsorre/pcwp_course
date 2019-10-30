@@ -1,6 +1,7 @@
 import unittest
 from math import factorial
 from timeit import timeit
+from functools import lru_cache
 from lesson2.exercise import arithtmetic, memoize
 from lesson2.exercise import factorial as factorial_mine
 
@@ -57,16 +58,24 @@ class TestMemoization(unittest.TestCase):
   def test_memoization(self):
     factorial_with_cache = memoize(factorial)
 
+    @lru_cache
+    def factorial_with_rlu(n):
+      factorial(n)
+
     def code_without():
       factorial(1000)
 
     def code():
       factorial_with_cache(1000)
 
+    def code_with_lru():
+      factorial_with_rlu(1000)
+
     result_without = timeit(code_without, number=10000)
     result_with = timeit(code, number=10000)
+    result_with_lru = timeit(code_with_lru, number=10000)
 
-    print(f"Tempo senza cache {result_without}. Tempo con cache {result_with}")
+    print(f"Tempo senza cache {result_without}. Tempo con cache {result_with}. Tempo con python decorator {result_with_lru}")
     self.assertGreater(result_without, result_with)
 
 if __name__ == '__main__':
