@@ -23,9 +23,7 @@ def login_required(f):
     
 @app.route('/')
 def confidential():
-    return jsonify({
-        "200": "Unrestricted Access"
-    })
+    raise NotImplementedError
 
 @app.route('/restricted')
 @login_required  
