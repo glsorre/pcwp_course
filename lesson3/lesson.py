@@ -49,7 +49,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return f"Hello world!"
+    return "Hello world!"
 
 @app.route('/<name>')
 def hello_name(name):
