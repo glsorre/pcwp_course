@@ -1,2 +1,2 @@
-def sum_intervals(element, array):
+def sum_of_intervals(intervals):
     raise NotImplementedError()
